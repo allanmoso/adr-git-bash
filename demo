@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -v
+
+adr init
+
+adr new microservices
+
+adr new logstash for log shipping
+
+# Splunk supersede logstash
+adr new -s 3 splunk for log management
+
+# ADR link on README
+echo -e "\n## Example\n\n[ADR TOC](doc/adr/toc.md)" >> README.md
+
+adr generate toc > doc/adr/toc.md
+
+set +v
