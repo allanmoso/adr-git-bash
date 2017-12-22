@@ -20,3 +20,7 @@ Now you can run the adr-tools doing the following:
 ```
 adr
 ```
+
+## Example
+
+[ADR TOC](doc/adr/toc.md)
