@@ -1,0 +1,12 @@
+#!/bin/bash
+version="${version:-2.1.0}"
+if ! grep -Fq "alias adr" ~/.bash_profile
+then
+  mkdir -p ~/bin
+  curl -kL https://github.com/npryce/adr-tools/archive/${version}.tar.gz | tar zx -C ~/bin
+  echo -e "\nalias adr=~/bin/adr-tools-${version}/src/adr" >> ~/.bash_profile
+fi
+
+alias adr=~/bin/adr-tools-${version}/src/adr
+
+adr
